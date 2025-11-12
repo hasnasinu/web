@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color:lightgray;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-top: 30px;
+    }
+
+    form {
+        background-color: white;
+        width: 400px;
+        margin: 30px auto;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+        display: inline-block;
+        width: 130px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    textarea,
+    select {
+        width: 220px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    fieldset {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+    legend {
+        font-weight: bold;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    input[type="submit"] {
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 15px;
+        margin-right: 10px;
+    }
+
+    input[type="submit"]:hover {
+    }
+
+    input[value="cancel"] {
+    }
+
+    input[value="cancel"]:hover {
+    }
+
+    br {
+        line-height: 18px;
+    }
+<script>
+function validate()
+{
+var name = document.getElementById("nam").value;
+var passwd = document.getElementById("pwd").value;
+var phone = document.getElementById("pno").value;
+if(name == "")
+{
+alert('Name cannot be blank');
+return false;
+}
+else if(!isNaN(name))
+{
+alert('Name required alphabets!');
+return false;
+}
+else if(passwd == "")
+{ alert('Enter a Password');
+ return false;
+}
+
+else if(passwd.length <8)
+{ alert('Password required atleast 8 characters');
+ return false;
+}
+else if(phone == "")
+{
+alert('Enter your phone number!');
+return false;
+}
+else if(isNaN(phone))
+{
+ alert('Invalid Phone Number');
+ return false;
+}
+else if(phone.length !=10)
+{
+alert('Not a Valid Phone Number (need 10 digits)');
+return false;
+}
+else
+{
+alert('Thank You for Registration');
+return true;
+}
+}
+</script>
+</style>
+</head>
+
+<body>
+<h2><center>REGISTRATION FORM</center></h2>
+
+<form>
+    <label>name:</label>
+    <input type="text" name="name" id="nam"><br><br>
+
+    <label>password:</label>
+    <input type="password" name="password" id="pwd"><br><br>
+
+    <label>mobile no:</label>
+    <input type="number" name="number" id="pno"><br><br>
+
+    <label>address:</label>
+    <textarea id="address" name="address" rows="3" cols="20"></textarea><br><br>
+
+    <label>DOB:</label>
+    <input type="date" id="dob" name="dob"><br><br>
+
+    <label>gender:</label>
+    <input type="radio" name="gender" value="male">male
+    <input type="radio" name="gender" value="female">female
+    <input type="radio" name="gender" value="other">other<br><br>
+
+    <label>choose nationality:</label>
+    <select>
+        <option>indian</option>
+        <option>italy</option>
+        <option>china</option>
+    </select><br><br>
+
+    <label>email:</label>
+    <input type="email" name="email"><br><br>
+
+    <fieldset>
+        <legend>language known</legend>
+        <input type="checkbox" name="language" value="english">english<br>
+        <input type="checkbox" name="language" value="malayalam">malayalam<br>
+        <input type="checkbox" name="language" value="hindi">hindi<br>
+        <input type="checkbox" name="language" value="arabic">arabic<br>
+    </fieldset><br>
+
+    <input type="submit" value="submit">
+    <input type="submit" value="cancel">
+</form>
+
+</body>
+</html>
